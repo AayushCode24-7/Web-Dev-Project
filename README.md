@@ -24,3 +24,14 @@ Frontend: HTML5, CSS3, JavaScript
     <li>FrontEnd:</li>
     <li>BackEnd:</li>
 </ul>
+<h1>Flow Chart</h1><br>
+
+```mermaid 
+graph LR
+    A[User UI] -- Search Query --> B(Backend API)
+    B -- Query Request --> C[(Database)]
+    C -- Movie Data --> B
+    B -- JSON Response --> A
+    A -- CRUD: Add to List --> B
+    B -- Save Data --> C
+```
