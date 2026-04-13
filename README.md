@@ -2,7 +2,7 @@
 
 Project Overview: This project is a "boiled down" version of a popular streaming platform, developed as part of the Web Development Capstone Course. Our goal is to demonstrate a fully integrated full-stack application featuring a dynamic movie discovery interface and a personalized user experience.
 
-<b><h1>👥 Contributors</b></h1>
+<h1><b>👥 Contributors</b></h1>
 Aayush - Aditya <br>
 [AayushCode24-7] - [adityasyantaxerror]
 
