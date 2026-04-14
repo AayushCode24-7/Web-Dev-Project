@@ -15,8 +15,8 @@ A "boiled down" version of a popular streaming platform, developed as part of th
 
 ## 🛠️ Tech Stack
 * **Frontend:** HTML5, CSS3, JavaScript
-* **Backend:** [Insert your Backend Framework here, e.g., Flask/Node.js]
-* **Database:** [Insert your Database here, e.g., PostgreSQL/MongoDB/SQLite]
+* **Backend:** [Flask.py]
+* **Database:**[]
 
 ## 🌐 Architecture & Flow
 ```mermaid
