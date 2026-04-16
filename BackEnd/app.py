@@ -4,6 +4,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+<<<<<<< HEAD
 # Database
 all_movies = [
     {"id": 1, "title": "Inception", "thumbnail": "https://bit.ly/3v8X6zX", "rating": 4.8},
@@ -29,3 +30,19 @@ def home():
 
 if __name__ == "__main__":
     app.run(port=5001, debug=True)
+=======
+# In-memory storage for now (Easy to explain in VIVA)
+watchlist = []
+
+@app.route('/api/movies', methods=['GET'])
+def get_movies():
+    # This will be where you later connect to a database
+    movies = [
+        {"id": 1, "title": "Inception"},
+        {"id": 2, "title": "Interstellar"}
+    ]
+    return jsonify(movies)
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
+>>>>>>> 0e7631260cf33ca4c4a1951da3d850a45eef141c
