@@ -6,8 +6,8 @@ CORS(app)
 
 # Database
 all_movies = [
-    {"id": 1, "title": "Inception", "thumbnail": "https://bit.ly/3v8X6zX", "rating": 4.8},
-    {"id": 2, "title": "Interstellar", "thumbnail": "https://bit.ly/3v7Y7aY", "rating": 4.9}
+    {"id": 1, "title": "Inception", "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQovCe0H45fWwAtV31ajOdXRPTxSsMQgPIQ3lcZX_mAW0jXV3kH", "rating": 4.8},
+    {"id": 2, "title": "Interstellar", "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9oW0XQlu1lo1G_49M-YwGzKR6rUg-CtflZj07HfbT8d2GwKWg", "rating": 4.9}
 ]
 my_watchlist = []
 
