@@ -1,34 +1,66 @@
-* {
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
+/* General Page Reset */
+body {
+    background-color: #141414; /* Netflix Dark Mode */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
 }
 
+h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
 
+/* The Root Container */
+#root {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to next line */
+    justify-content: center;
+    gap: 20px;
+}
+
+/* The Card Styling */
 .card {
-   margin: 24px auto;
-   padding-right: 24px;
-   border: 1.6px solid rgba(255, 3, 3, 0.649);
-   border-radius: 16px;
-
-
-   display: flex;
-   align-items: center;
-   gap: 24px;
-
-
-   max-width: fit-content;
-
-   box-shadow: 0px 0px 8px rgb(255, 0, 0);
+    background-color: #2f2f2f;
+    border-radius: 8px;
+    padding: 15px;
+    width: 200px;
+    transition: transform 0.2s; /* Smooth animation on hover */
 }
 
 .card:hover {
-   box-shadow: 0px 0px 12px rgb(109, 0, 251);
-   transition: 0.2s;
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
-img {
-   max-height: 140px;
-   border-top-left-radius: 12px;
-   border-bottom-left-radius: 12px;
+.card img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.card h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.card p {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Button Styling for Watchlist */
+button {
+    background-color: #e50914; /* Netflix Red */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #b20710;
 }

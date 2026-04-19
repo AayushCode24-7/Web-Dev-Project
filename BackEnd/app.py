@@ -12,36 +12,18 @@ all_movies = [
 my_watchlist = []
 
 # READ: Get all movies (GET)
-@app.route("/movies", methods=["GET"])
+# NOTE: The path is now /products to match your frontend fetch()
+@app.route("/products", methods=["GET"])
 def get_movies():
     return jsonify({"products": all_movies})
 
-# CREATE: Add to watchlist (POST - FS 20)
+# CREATE: Add to watchlist (POST)
 @app.route("/watchlist", methods=["POST"])
 def add_to_list():
     data = request.json
     my_watchlist.append(data)
-    return jsonify({"message": "Movie Added!", "current_list": my_watchlist}), 201
-
-@app.route("/")
-def home():
-    return "Server is running! Use /movies to see the data."
+    print(f"Watchlist updated: {my_watchlist}")
+    return jsonify({"message": f"{data['title']} added to watchlist!"}), 201
 
 if __name__ == "__main__":
     app.run(port=5001, debug=True)
-    
-# In-memory storage for now (Easy to explain in VIVA)
-watchlist = []
-
-@app.route('/api/movies', methods=['GET'])
-def get_movies():
-    # This will be where you later connect to a database
-    movies = [
-        {"id": 1, "title": "Inception"},
-        {"id": 2, "title": "Interstellar"}
-    ]
-    return jsonify(movies)
-
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
-
