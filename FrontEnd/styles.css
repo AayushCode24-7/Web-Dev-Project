@@ -1,4 +1,4 @@
-/* 1. Reset everything to prevent overlapping */
+/* 1. Base Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,37 +7,101 @@
 
 body {
     background-color: #141414;
-    color: white;
-    font-family: Arial, sans-serif;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevents double scrollbars */
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* 2. The Layout Parent */
+/* 2. Layout */
 .layout-container {
     display: flex;
     width: 100%;
     height: 100vh;
 }
 
-/* 3. The Sidebar */
 .sidebar {
     width: 200px;
     background-color: #000;
     padding: 20px;
-    flex-shrink: 0; /* Ensures sidebar never shrinks */
+    flex-shrink: 0;
     border-right: 1px solid #333;
 }
 
-/* 4. The Content Area */
+.sidebar h2 { color: #e50914; margin-bottom: 20px; }
+.sidebar ul { list-style: none; }
+.sidebar li { padding: 15px 0; }
+.sidebar a { color: white; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; }
+.sidebar a:hover { color: #e50914; transition: color 0.3s ease; }
+
+/* Icon spacing */
+.sidebar i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
 #root {
-    flex: 1; /* This is the key: take all remaining width */
+    flex: 1;
     padding: 20px;
-    overflow-y: auto; /* Scroll only inside this area */
-    
-    /* Grid layout for movies */
+    overflow-y: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Aligns cards to the left */
+    justify-content: flex-start;
     gap: 20px;
+}
+
+/* 3. Movie Cards */
+.card {
+    background-color: #181818;
+    border-radius: 4px;
+    width: 200px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-info { padding: 12px; }
+
+.card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card p { color: #a3a3a3; font-size: 0.85rem; }
+
+button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:active { transform: scale(0.95); }
+
+/* 4. Responsive Media Query */
+@media (max-width: 768px) {
+    .layout-container { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid #333; }
+    .sidebar ul { display: flex; gap: 20px; justify-content: center; }
 }
