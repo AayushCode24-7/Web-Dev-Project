@@ -15,7 +15,7 @@ A "boiled down" version of a popular streaming platform, developed as part of th
 
 ## 🛠️ Tech Stack
 * **Frontend:** HTML5, CSS3, JavaScript
-* **Backend:** Flask, Json
+* **Backend:** Flask, Json, Python
 * **Database:**[]
 
 ## 🌐 Architecture & Flow
