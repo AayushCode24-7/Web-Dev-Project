@@ -1,10 +1,10 @@
 const URL = "http://127.0.0.1:5002";
 
-async function getProducts() {
+async function getmovies() {
     try {
-        const response = await fetch(`${URL}/products`);
+        const response = await fetch(`${URL}/movies`);
         const data = await response.json();
-        renderUI(data.products);
+        renderUI(data.movies);
     } catch (error) {
         console.error("Error connecting to backend:", error);
     }
@@ -38,7 +38,7 @@ async function getWatchlist() {
 function showHome() {
     document.getElementById("root").style.display = "block";
     document.getElementById("watchlist-root").style.display = "none";
-    getProducts();
+    getmovies();
 }
 
 function showWatchlist() {
@@ -68,4 +68,4 @@ function renderUI(arr) {
 }
 
 // Initial Call
-getProducts();
+getmovies();
