@@ -11,6 +11,11 @@ all_movies = [
     {"id": 3, "title": "The Dark Knight", "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQkUywIUXDjHSQJIaNHYVs08osgBpF5Ot-xmB_omyEZeeRP9Xug", "rating": 4.7},
     {"id": 4, "title": "The Matrix", "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5DoFtShSmClflZ0RzBj9JBMweU5IUVBCeEbbLeV2XPlCnTKNi", "rating": 4.6},
     {"id": 5, "title": "The Lord of the Rings: The Fellowship of the Ring", "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSYHuKZScdd6RHhzh-IDKga3wfTTd9cPEe1Y2JUI5gjvaxgJc3O", "rating": 4.8},
+    {"id": 6, "title": "Dhurandhar", "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAHn3l83WxU4xzIgbGq0WqTG4GJbOW7flby7Y8PEh2ueVAbYO_", "rating": 4.7 },
+    {"id": 7, "title": "RRR", "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRx0wTDoneV8OuMM6hNfD7vfibB_jt6FcCL-u8H2DljlRXgGCoG", "rating": 4.6 },
+    {"id": 8, "title": "Jawan", "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA8fxJgOk6Q4UGjmsa1q3CQ1Q05Lt0Dn1leAl6_KexCEjqJAe6", "rating": 4.5 },
+    {"id": 9, "title": "Mirzapur", "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQyP8kYiwrOhEHB8b_r1hDBnw7Boeeget8D8s0qq3Zm8Jx8UZf7", "rating": 4.8 },
+    {"id": 10, "title": "Sacred Games", "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTyI-N4Sy-tDcLM93Z0049o6nuIi_afh8T2K5MyVRJ5FxY6Aj4a", "rating": 4.7 },
 ]
 my_watchlist = []
 
