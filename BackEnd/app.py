@@ -19,6 +19,7 @@ my_watchlist = []
 def get_movies():
     return jsonify({"products": all_movies})
 
+
 # CREATE: Add to watchlist (POST)
 @app.route("/watchlist", methods=["POST"])
 def add_to_list():
@@ -27,5 +28,11 @@ def add_to_list():
     print(f"Watchlist updated: {my_watchlist}")
     return jsonify({"message": f"{data['title']} Added to watchlist!"}), 201
 
+# READ: Get all watchlist items (GET)
+@app.route("/watchlist", methods=["GET"])
+def get_watchlist():
+    return jsonify({"watchlist": my_watchlist})
+
+# Server Port(5002)
 if __name__ == "__main__":
-    app.run(port=5001, debug=True)
+    app.run(port=5002, debug=True)#
