@@ -62,7 +62,6 @@ def add_to_list():
     finally:
         conn.close()
 
-# NEW: Route to remove items
 @app.route("/watchlist/<string:title>", methods=["DELETE"])
 def remove_from_watchlist(title):
     conn = get_db()
@@ -72,6 +71,14 @@ def remove_from_watchlist(title):
         return jsonify({"message": f"{title} removed!"}), 200
     finally:
         conn.close()
+
+@app.route("/search", methods=["GET"])
+def search_movies():
+    query = request.args.get("q", "").strip()
+    conn = get_db()
+    movies = conn.execute("SELECT * FROM movies WHERE title LIKE ?", (f"%{query}%",)).fetchall()
+    conn.close()
+    return jsonify({"movies": [dict(m) for m in movies]})
 
 if __name__ == "__main__":
     app.run(port=5003, debug=True)

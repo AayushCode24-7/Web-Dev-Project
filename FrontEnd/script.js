@@ -28,7 +28,6 @@ async function addToWatchlist(movie) {
     }
 }
 
-// NEW: Function to delete from DB and refresh UI
 async function removeFromWatchlist(title) {
     try {
         const response = await fetch(`${URL}/watchlist/${encodeURIComponent(title)}`, {
@@ -36,7 +35,7 @@ async function removeFromWatchlist(title) {
         });
         const result = await response.json();
         alert(result.message);
-        getWatchlist(); // Refresh the list immediately
+        getWatchlist();
     } catch (error) {
         console.error("Delete failed:", error);
     }
@@ -52,15 +51,60 @@ async function getWatchlist() {
     }
 }
 
+async function searchMovies(query) {
+    query = query.trim();
+    if (query === "") {
+        document.getElementById("search-root").style.display = "none";
+        document.getElementById("root").style.display = "flex";
+        return;
+    }
+    try {
+        const response = await fetch(`${URL}/search?q=${encodeURIComponent(query)}`);
+        const data = await response.json();
+        document.getElementById("root").style.display = "none";
+        document.getElementById("watchlist-root").style.display = "none";
+        document.getElementById("search-root").style.display = "flex";
+        renderSearchResults(data.movies);
+    } catch (error) {
+        console.error("Search error:", error);
+    }
+}
+
+function renderSearchResults(arr) {
+    const searchRoot = document.getElementById("search-root");
+    searchRoot.innerHTML = "";
+    if (!arr || arr.length === 0) {
+        searchRoot.innerHTML = "<p style='padding:20px;'>No movies found.</p>";
+        return;
+    }
+    arr.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+            <img src="${item.thumbnail}" alt="${item.title}" />
+            <div class="card-info">
+                <h3>${item.title}</h3>
+                <p>Rating: ${item.rating}✨</p>
+                <button onclick='addToWatchlist(${JSON.stringify(item)})'>+ Watchlist</button>
+            </div>
+        `;
+        searchRoot.appendChild(card);
+    });
+}
+
 function showHome() {
     document.getElementById("root").style.display = "flex";
     document.getElementById("watchlist-root").style.display = "none";
+    document.getElementById("search-root").style.display = "none";
+    document.getElementById("search-bar").value = "";
     getmovies();
 }
 
 function showWatchlist() {
     document.getElementById("root").style.display = "none";
     document.getElementById("watchlist-root").style.display = "flex";
+    document.getElementById("search-root").style.display = "none";
+    document.getElementById("search-bar").value = "";
     getWatchlist();
 }
 

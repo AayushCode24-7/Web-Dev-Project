@@ -13,6 +13,7 @@
     <div class="layout-container">
         <nav class="sidebar">
             <h2>Netflix</h2>
+            <input type="text" id="search-bar" placeholder="Search movies..." oninput="searchMovies(this.value)">
             <ul>
                 <li><a href="#" onclick="showHome(); return false;">Home</a></li>
                 <li><a href="#" onclick="showHome(); return false;">Movies</a></li>
@@ -21,6 +22,7 @@
         </nav>
         
         <main id="root"></main>
+        <main id="search-root"></main>
         <main id="watchlist-root"></main>
     </div>
 
