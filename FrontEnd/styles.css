@@ -10,8 +10,9 @@ body {
     background-color: transparent;
     color: #ffffff;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* 2. Theme Toggle (Button Logic) */
@@ -97,7 +98,8 @@ body {
     overflow-y: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    align-content: flex-start;
     gap: 20px;
 }
 
@@ -115,7 +117,8 @@ body {
     overflow-y: auto;
     display: none;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;   /* changed */
+    align-content: flex-start;
     gap: 20px;
 }
 
@@ -123,12 +126,14 @@ body {
 .card {
     background-color: #181818;
     border-radius: 4px;
-    width: 200px;
+    width: 220px;
     overflow: hidden;
     transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
     cursor: pointer;
     box-shadow: 0 4px 8px rgb(255, 255, 255);
     border: #000 solid 1.1px;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .card:hover {
