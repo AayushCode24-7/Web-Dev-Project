@@ -1,4 +1,5 @@
 import sqlite3
+import os
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
@@ -32,6 +33,7 @@ def init_db():
         conn.commit()
     conn.close()
 
+# Initialize the database on startup
 init_db()
 
 @app.route("/movies", methods=["GET"])
@@ -56,7 +58,7 @@ def add_to_list():
         conn.execute("INSERT INTO watchlist (title, thumbnail, rating) VALUES (?, ?, ?)",
                      (data['title'], data['thumbnail'], data['rating']))
         conn.commit()
-        return jsonify({"message": f"{data['title']} added!"}), 201
+        return jsonify({"message": f"{data['title']} added to watchlist!"}), 201
     except sqlite3.IntegrityError:
         return jsonify({"message": "Movie already in watchlist"}), 400
     finally:
@@ -69,6 +71,8 @@ def remove_from_watchlist(title):
         conn.execute("DELETE FROM watchlist WHERE title = ?", (title,))
         conn.commit()
         return jsonify({"message": f"{title} removed!"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
     finally:
         conn.close()
 
@@ -81,4 +85,6 @@ def search_movies():
     return jsonify({"movies": [dict(m) for m in movies]})
 
 if __name__ == "__main__":
-    app.run(host = "0.0.0.0",port=5003, debug=True)
+    # Use the port 5003
+    port = int(os.environ.get("PORT", 5003))
+    app.run(host="0.0.0.0", port=port)
