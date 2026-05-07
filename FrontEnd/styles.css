@@ -20,16 +20,16 @@ body {
 
 .theme-btn {
     position: fixed;
-    top: 20px;
+    top: 10px;
     right: 20px;
     z-index: 1000;
-    background-color: #e50914;
+    background-color: #000000;
     color: white;
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-weight: bolder;
+    font-size: 1.2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
@@ -72,7 +72,7 @@ body {
 
 .sidebar h2 { color: #e50909; margin-bottom: 20px; }
 
-/* SEARCH BAR — NEW */
+/* SEARCH BAR */
 #search-bar {
     width: 100%;
     padding: 10px 12px;
