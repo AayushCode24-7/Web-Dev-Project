@@ -93,7 +93,7 @@ function renderSearchResults(arr) {
         searchRoot.appendChild(card);
     });
 }
-
+// Show Home Page Function
 function showHome() {
     document.getElementById("root").style.display = "flex";
     document.getElementById("watchlist-root").style.display = "none";
@@ -101,7 +101,7 @@ function showHome() {
     document.getElementById("search-bar").value = "";
     getmovies();
 }
-
+// Show Watchlist Page Function
 function showWatchlist() {
     document.getElementById("root").style.display = "none";
     document.getElementById("watchlist-root").style.display = "flex";
