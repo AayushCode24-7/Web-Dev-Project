@@ -28,6 +28,10 @@ def init_db():
             ("The Matrix", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5DoFtShSmClflZ0RzBj9JBMweU5IUVBCeEbbLeV2XPlCnTKNi", 4.6),
             ("RRR", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRx0wTDoneV8OuMM6hNfD7vfibB_jt6FcCL-u8H2DljlRXgGCoG", 4.6),
             ("The Conjuring: The Last Rites", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTOpsfBLMRdOZg4ccC2IMNPjc87uLcNiBKZZOGWYRmdzQeSKrkw", 4.2),
+            ("Oppenheimer", "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS-v82iAoNANJgZ6EATtRCYgJvaXN9L02Dg0V5-0oN9IFOQVluQ", 4.8),
+            ("Dune: Part Two", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBu8Gzdygf5OOqBJUIJ3-ZxiPbLh62OhvLmtOvuR7x2gF3DucU", 4.7),
+            ("Spider-Man: Across the Spider-Verse", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0MiAFRF0oxZO8nwPESVBei050PmIs6_46y9pPRkfWS59pFJpi", 4.9),
+            ("Parasite", "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRa9QXcKkW6fhivLE4LjAdeC7CvLFnJk5vRjkK7siVD5TkeXVfU", 4.8),
         ]
         cursor.executemany("INSERT INTO movies (title, thumbnail, rating) VALUES (?, ?, ?)", movie_list)
         conn.commit()
